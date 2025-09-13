@@ -1,0 +1,109 @@
+# TalkingPhoto AI MVP - Streamlit Frontend Requirements
+# Epic 4: User Experience & Interface Implementation
+
+# Core Streamlit Framework
+streamlit==1.28.0
+streamlit-webrtc==0.47.1
+streamlit-authenticator==0.2.3
+streamlit-option-menu==0.3.6
+streamlit-aggrid==0.3.4.post3
+
+# Data Visualization & Analytics
+plotly==5.17.0
+pandas==2.1.1
+numpy==1.24.4
+matplotlib==3.7.2
+seaborn==0.12.2
+
+# Image Processing & Computer Vision
+Pillow==10.0.0
+opencv-python==4.8.1.78
+imageio==2.31.5
+imageio-ffmpeg==0.4.9
+
+# Audio Processing
+pydub==0.25.1
+soundfile==0.12.1
+librosa==0.10.1
+
+# HTTP Client & API Communication
+requests==2.31.0
+httpx==0.25.0
+aiohttp==3.8.6
+
+# WebSocket Support
+websocket-client==1.6.4
+python-socketio==5.10.0
+websockets==11.0.3
+
+# Authentication & Security
+PyJWT==2.8.0
+bcrypt==4.0.1
+cryptography==41.0.4
+
+# File Handling & Utilities
+pathlib2==2.3.7
+python-magic==0.4.27
+mimetypes==1.0.0
+
+# Configuration & Environment
+python-dotenv==1.0.0
+pydantic==2.4.2
+toml==0.10.2
+
+# Date & Time Handling
+python-dateutil==2.8.2
+pytz==2023.3
+
+# Progress Tracking & UI Components
+tqdm==4.66.1
+rich==13.6.0
+
+# Data Validation
+marshmallow==3.20.1
+cerberus==1.3.5
+
+# Caching & Performance
+streamlit-cache==0.1.3
+diskcache==5.6.3
+
+# Testing (for component testing)
+pytest==7.4.2
+pytest-streamlit==0.1.0
+selenium==4.15.2
+
+# Development Tools
+black==23.9.1
+flake8==6.1.0
+isort==5.12.0
+
+# Additional UI Components
+streamlit-elements==0.1.0
+streamlit-modal==0.1.0
+streamlit-carousel==0.1.0
+streamlit-player==0.1.5
+streamlit-extras==0.3.5
+
+# Real-time Communication
+eventlet==0.33.3
+gevent==23.9.1
+
+# File Upload & Storage
+boto3==1.28.62  # For S3 integration
+azure-storage-blob==12.19.0  # For Azure Blob Storage
+
+# Analytics & Monitoring
+google-analytics-data==0.18.1
+mixpanel==4.10.0
+
+# Mobile Responsive Components
+streamlit-mobile==0.1.0
+streamlit-responsive==0.1.0
+
+# Internationalization
+babel==2.13.0
+gettext==4.0.0
+
+# Performance Monitoring
+psutil==5.9.6
+memory-profiler==0.61.0

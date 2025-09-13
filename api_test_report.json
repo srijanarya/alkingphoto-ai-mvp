@@ -1,0 +1,15 @@
+{
+  "timestamp": "2025-09-13T07:06:26.122797",
+  "results": {
+    "gemini": "SUCCESS",
+    "gemini_vision": "SUCCESS",
+    "tts": "SUCCESS",
+    "vision": "FAILED: 403",
+    "veo3": "KEY_CONFIGURED"
+  },
+  "api_keys_configured": {
+    "GOOGLE_AI_API_KEY": true,
+    "GEMINI_API_KEY": true,
+    "VEO3_API_KEY": true
+  }
+}

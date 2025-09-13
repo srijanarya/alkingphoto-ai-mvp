@@ -1,0 +1,156 @@
+{
+  "timestamp": "2025-09-13T06:58:08.673605",
+  "application_url": "https://alkingphoto-ai-mvp-fnyuyh3wm6ofnev3fbseeo.streamlit.app",
+  "test_results": {
+    "pipeline_profiling": {
+      "total_time": 13634.673833847046,
+      "stages": {
+        "image_upload": {
+          "duration_ms": 503.9329528808594,
+          "cpu_time_ms": 0.06599999999995498,
+          "memory_delta_mb": 0.15625,
+          "io_wait_ms": 503.8669528808594,
+          "status": "success"
+        },
+        "image_processing": {
+          "duration_ms": 1012.8719806671143,
+          "cpu_time_ms": 12.276000000000009,
+          "memory_delta_mb": 3.5625,
+          "io_wait_ms": 1000.5959806671143,
+          "status": "success"
+        },
+        "ai_service_call": {
+          "duration_ms": 3001.424789428711,
+          "cpu_time_ms": 1.014000000000015,
+          "memory_delta_mb": -3.328125,
+          "io_wait_ms": 3000.410789428711,
+          "status": "success"
+        },
+        "video_generation": {
+          "duration_ms": 8000.898122787476,
+          "cpu_time_ms": 0.4509999999999792,
+          "memory_delta_mb": -3.265625,
+          "io_wait_ms": 8000.447122787476,
+          "status": "success"
+        },
+        "file_io": {
+          "duration_ms": 805.0041198730469,
+          "cpu_time_ms": 0.04700000000001925,
+          "memory_delta_mb": -2.765625,
+          "io_wait_ms": 804.9571198730468,
+          "status": "success"
+        },
+        "response_delivery": {
+          "duration_ms": 304.8248291015625,
+          "cpu_time_ms": 0.0860000000000305,
+          "memory_delta_mb": -2.703125,
+          "io_wait_ms": 304.7388291015625,
+          "status": "success"
+        }
+      },
+      "bottlenecks": [
+        {
+          "stage": "video_generation",
+          "duration_ms": 8000.898122787476,
+          "severity": "high"
+        }
+      ],
+      "memory_usage": {
+        "current_mb": 0.00628662109375,
+        "peak_mb": 0.3149566650390625,
+        "process_mb": 9.1875
+      },
+      "recommendations": [
+        "High I/O wait in image_upload: Consider async processing",
+        "High I/O wait in image_processing: Consider async processing",
+        "High I/O wait in ai_service_call: Consider async processing",
+        "Optimize video_generation: Currently takes 8001ms",
+        "High I/O wait in video_generation: Consider async processing",
+        "High I/O wait in file_io: Consider async processing",
+        "High I/O wait in response_delivery: Consider async processing"
+      ]
+    },
+    "concurrent_users": {
+      "concurrent_users": 100,
+      "total_requests": 0,
+      "successful_requests": 0,
+      "failed_requests": 100,
+      "response_times": [],
+      "start_time": "2025-09-13T06:58:22.312015",
+      "errors": [],
+      "end_time": "2025-09-13T06:58:22.315492"
+    },
+    "memory_analysis": {
+      "baseline_mb": 14.953125,
+      "peak_mb": 15.609375,
+      "average_mb": 11.1828125,
+      "leaks_detected": false,
+      "gc_stats": {
+        "collections": [1087, 8, 3],
+        "threshold": [2000, 10, 10],
+        "objects": 27296
+      },
+      "recommendations": []
+    },
+    "bottlenecks": [
+      {
+        "component": "AI Service Calls",
+        "impact_level": "high",
+        "response_time_ms": 2604.691399860152,
+        "recommendations": [
+          "Implement response caching for common requests",
+          "Use batch processing for multiple requests",
+          "Consider fallback to alternative AI providers",
+          "Implement request queuing with priority levels"
+        ]
+      },
+      {
+        "component": "File I/O Operations",
+        "impact_level": "medium",
+        "response_time_ms": 506.60014152526855,
+        "recommendations": [
+          "Use async file I/O operations",
+          "Implement file streaming instead of full loads",
+          "Consider using cloud storage with CDN"
+        ]
+      },
+      {
+        "component": "Database Queries",
+        "impact_level": "medium",
+        "response_time_ms": 260.9773131827746,
+        "recommendations": [
+          "Add database indexes for frequent queries",
+          "Implement query result caching",
+          "Use connection pooling",
+          "Consider read replicas for scaling"
+        ]
+      },
+      {
+        "component": "WebSocket Connections",
+        "impact_level": "low",
+        "response_time_ms": 270.2409615065953,
+        "recommendations": []
+      },
+      {
+        "component": "Image Processing",
+        "impact_level": "low",
+        "response_time_ms": 38.114070892333984,
+        "recommendations": []
+      }
+    ]
+  },
+  "overall_recommendations": [
+    "Implement Redis caching for frequently accessed data",
+    "Use CDN for static assets and generated videos",
+    "Implement request queuing with priority levels",
+    "Add horizontal scaling with load balancing",
+    "Optimize database queries with proper indexing",
+    "Implement async processing for heavy operations",
+    "Use connection pooling for external services",
+    "Add circuit breakers for external API calls",
+    "Implement progressive image loading",
+    "Use WebP format for images to reduce size",
+    "Enable HTTP/2 for better performance",
+    "Implement service worker for offline functionality"
+  ]
+}
