@@ -167,6 +167,34 @@ def apply_professional_theme():
             transform: scaleX(1);
         }
         
+        /* Clickable Feature Cards */
+        .clickable-card {
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .click-indicator {
+            position: absolute;
+            bottom: 1rem;
+            right: 1rem;
+            color: var(--accent-orange);
+            font-size: 0.9rem;
+            font-weight: 600;
+            opacity: 0;
+            transform: translateX(-10px);
+            transition: all 0.3s ease;
+        }
+        
+        .clickable-card:hover .click-indicator {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .feature-card-link {
+            display: block;
+            text-decoration: none;
+        }
+        
         /* Buttons */
         .stButton > button {
             background: linear-gradient(135deg, var(--accent-orange) 0%, #ff7b3d 100%);
@@ -400,16 +428,30 @@ def create_hero_section(title: str, subtitle: str = "", cta_text: str = "Get Sta
     
     return False  # Return False since we're handling click via JavaScript
 
-def create_feature_card(title: str, description: str, icon: str = "🚀"):
-    """Create a feature card with hover effects"""
+def create_feature_card(title: str, description: str, icon: str = "🚀", link_to: str = None):
+    """Create a feature card with hover effects and optional navigation"""
     
-    st.markdown(f"""
-    <div class="feature-card">
-        <div style="font-size: 2rem; margin-bottom: 1rem;">{icon}</div>
-        <h3 style="color: var(--accent-orange); margin-bottom: 0.5rem;">{title}</h3>
-        <p style="color: var(--text-secondary);">{description}</p>
-    </div>
-    """, unsafe_allow_html=True)
+    if link_to:
+        # Clickable card that navigates to a section
+        st.markdown(f"""
+        <a href="#{link_to}" class="feature-card-link" style="text-decoration: none; color: inherit;">
+            <div class="feature-card clickable-card">
+                <div style="font-size: 2rem; margin-bottom: 1rem;">{icon}</div>
+                <h3 style="color: var(--accent-orange); margin-bottom: 0.5rem;">{title}</h3>
+                <p style="color: var(--text-secondary);">{description}</p>
+                <div class="click-indicator">Click to explore →</div>
+            </div>
+        </a>
+        """, unsafe_allow_html=True)
+    else:
+        # Static card without navigation
+        st.markdown(f"""
+        <div class="feature-card">
+            <div style="font-size: 2rem; margin-bottom: 1rem;">{icon}</div>
+            <h3 style="color: var(--accent-orange); margin-bottom: 0.5rem;">{title}</h3>
+            <p style="color: var(--text-secondary);">{description}</p>
+        </div>
+        """, unsafe_allow_html=True)
 
 def create_status_badge(status: str, type: str = "success"):
     """Create a status badge with appropriate styling"""

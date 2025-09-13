@@ -50,21 +50,24 @@ def main():
         create_feature_card(
             "Lightning Fast",
             "Generate talking photos in under 60 seconds with our optimized AI pipeline",
-            "⚡"
+            "⚡",
+            link_to="create-section"  # Navigate to main creation section
         )
     
     with col2:
         create_feature_card(
             "Studio Quality",
             "Professional-grade output with natural voice synthesis and lip-sync accuracy",
-            "🎭"
+            "🎭",
+            link_to="voice-section"  # Navigate to voice selection
         )
     
     with col3:
         create_feature_card(
             "Multi-Language",
             "Support for 120+ languages including Hindi and regional Indian languages",
-            "🌍"
+            "🌍",
+            link_to="language-section"  # Make it clickable to navigate to language selection
         )
     
     # Main Application Section with ID anchor for smooth scrolling
@@ -125,16 +128,34 @@ def main():
             help="Keep it under 30 seconds for best results (approximately 80-100 words)"
         )
         
-        # Voice Selection
+        # Voice Selection with ID anchor
+        st.markdown("""
+        <div id="voice-section" style="scroll-margin-top: 100px;">
+            <h4 style="color: #d96833; margin-top: 1rem; margin-bottom: 0.5rem;">🎤 Select Voice Type</h4>
+        </div>
+        """, unsafe_allow_html=True)
+        
         voice_type = st.selectbox(
-            "Select Voice Type",
-            ["Professional Male", "Professional Female", "Friendly Male", "Friendly Female", "Energetic", "Calm & Soothing"]
+            "",
+            ["Professional Male", "Professional Female", "Friendly Male", "Friendly Female", "Energetic", "Calm & Soothing"],
+            key="voice_selector"
         )
         
-        # Language Selection
+        # Language Selection with ID anchor
+        st.markdown("""
+        <div id="language-section" style="scroll-margin-top: 100px;">
+            <h4 style="color: #d96833; margin-top: 1rem; margin-bottom: 0.5rem;">🌍 Select Language</h4>
+        </div>
+        """, unsafe_allow_html=True)
+        
         language = st.selectbox(
-            "Select Language",
-            ["English", "Hindi", "Spanish", "French", "German", "Mandarin", "Tamil", "Telugu", "Bengali"]
+            "",
+            ["English", "Hindi", "Spanish", "French", "German", "Mandarin", "Tamil", "Telugu", "Bengali", 
+             "Arabic", "Japanese", "Korean", "Italian", "Portuguese", "Russian", "Dutch", "Turkish",
+             "Polish", "Swedish", "Norwegian", "Danish", "Finnish", "Greek", "Hebrew", "Thai",
+             "Vietnamese", "Indonesian", "Malay", "Urdu", "Punjabi", "Gujarati", "Marathi", "Kannada",
+             "Malayalam", "Odia", "Assamese", "Nepali", "Sinhala", "Swahili", "Yoruba", "Zulu"],
+            key="language_selector"
         )
         
         if script_text:
