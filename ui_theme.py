@@ -235,18 +235,30 @@ def apply_professional_theme():
             height: 300px;
         }
         
-        /* File Uploader */
+        /* File Uploader - Consistent with text area styling */
         .stFileUploader > div {
             background: var(--card-bg) !important;
-            border: 2px dashed var(--accent-orange) !important;
-            border-radius: var(--border-radius) !important;
+            border: 1px solid rgba(217,104,51,0.3) !important;
+            border-radius: 12px !important;
             padding: 2rem !important;
             transition: var(--transition);
+            box-shadow: 0 0 0 1px transparent;
         }
         
         .stFileUploader > div:hover {
-            background: rgba(217,104,51,0.1) !important;
-            border-color: var(--accent-hover) !important;
+            background: rgba(217,104,51,0.05) !important;
+            border-color: var(--accent-orange) !important;
+            box-shadow: 0 0 20px rgba(217,104,51,0.2) !important;
+        }
+        
+        /* File uploader dropzone consistent styling */
+        [data-testid="stFileUploaderDropzone"] {
+            border: 1px solid rgba(217,104,51,0.3) !important;
+            background: transparent !important;
+        }
+        
+        [data-testid="stFileUploaderDropzone"]:hover {
+            border-color: var(--accent-orange) !important;
         }
         
         /* Input Fields */
@@ -264,6 +276,13 @@ def apply_professional_theme():
         .stTextArea > div > div > textarea:focus {
             border-color: var(--accent-orange) !important;
             box-shadow: 0 0 0 3px rgba(217,104,51,0.1) !important;
+        }
+        
+        /* Consistent focus glow for file uploader */
+        .stFileUploader > div:focus-within,
+        [data-testid="stFileUploaderDropzone"]:focus-within {
+            border-color: var(--accent-orange) !important;
+            box-shadow: 0 0 20px rgba(217,104,51,0.3) !important;
         }
         
         /* Progress Bar */
