@@ -89,13 +89,18 @@ def apply_professional_theme():
             font-family: 'Syne', sans-serif;
             font-size: 1.5rem;
             font-weight: 800;
-            color: var(--accent-orange);
+            color: var(--primary-text);
             text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-logo:hover {
+            color: var(--accent-orange);
         }
         
         .nav-link {
             font-family: 'Space Grotesk', sans-serif;
-            color: var(--text-secondary);
+            color: var(--primary-text);
             text-decoration: none;
             font-size: 0.95rem;
             font-weight: 500;
@@ -240,6 +245,12 @@ def apply_professional_theme():
             background: rgba(217,104,51,0.05);
         }
         
+        .feature-card:hover h3,
+        .feature-card:hover p {
+            color: var(--accent-orange) !important;
+            transition: color 0.3s ease;
+        }
+        
         .feature-card:hover::before {
             transform: scaleX(1);
         }
@@ -265,6 +276,11 @@ def apply_professional_theme():
         .clickable-card:hover .click-indicator {
             opacity: 1;
             transform: translateX(0);
+        }
+        
+        .clickable-card:hover h3,
+        .clickable-card:hover p {
+            color: var(--accent-orange) !important;
         }
         
         .feature-card-link {
