@@ -91,6 +91,45 @@ def apply_professional_theme():
             margin-bottom: 2rem;
         }
         
+        /* Hero CTA Button */
+        .hero-cta-link {
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+        
+        .hero-cta-button {
+            background: linear-gradient(135deg, #ff7b3d 0%, #d96833 100%);
+            color: white;
+            border: none;
+            padding: 1rem 3rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 15px rgba(217, 104, 51, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(217, 104, 51, 0.5);
+            background: linear-gradient(135deg, #ff8c4d 0%, #e97943 100%);
+        }
+        
+        .hero-cta-button:active {
+            transform: translateY(-1px);
+        }
+        
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        
         /* Card Components */
         .feature-card {
             background: var(--card-bg);
@@ -313,16 +352,53 @@ def apply_professional_theme():
     """, unsafe_allow_html=True)
 
 def create_hero_section(title: str, subtitle: str = "", cta_text: str = "Get Started"):
-    """Create a hero section with gradient background"""
+    """Create a hero section with gradient background and smooth scroll CTA"""
     
     st.markdown(f"""
     <div class="hero-container">
         <h1 class="hero-title">{title}</h1>
         <p class="hero-subtitle">{subtitle}</p>
+        <a href="#create-section" class="hero-cta-link">
+            <button class="hero-cta-button">{cta_text}</button>
+        </a>
     </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {{
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {{
+                anchor.addEventListener('click', function (e) {{
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {{
+                        targetElement.scrollIntoView({{
+                            behavior: 'smooth',
+                            block: 'start'
+                        }});
+                    }}
+                }});
+            }});
+            
+            // Alternative: Scroll on button click
+            const ctaButton = document.querySelector('.hero-cta-button');
+            if (ctaButton) {{
+                ctaButton.addEventListener('click', function(e) {{
+                    e.preventDefault();
+                    const createSection = document.getElementById('create-section');
+                    if (createSection) {{
+                        createSection.scrollIntoView({{
+                            behavior: 'smooth',
+                            block: 'start'
+                        }});
+                    }}
+                }});
+            }}
+        }});
+    </script>
     """, unsafe_allow_html=True)
     
-    return st.button(cta_text, key="hero_cta", use_container_width=True)
+    return False  # Return False since we're handling click via JavaScript
 
 def create_feature_card(title: str, description: str, icon: str = "🚀"):
     """Create a feature card with hover effects"""

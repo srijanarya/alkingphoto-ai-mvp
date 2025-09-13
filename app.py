@@ -67,9 +67,9 @@ def main():
             "🌍"
         )
     
-    # Main Application Section
+    # Main Application Section with ID anchor for smooth scrolling
     st.markdown("""
-    <div style='margin: 4rem 0 2rem 0; text-align: center;'>
+    <div id="create-section" style='margin: 4rem 0 2rem 0; text-align: center; scroll-margin-top: 20px;'>
         <h2 style='color: #ece7e2; font-size: 2.5rem; margin-bottom: 1rem;'>Create Your Talking Photo</h2>
         <p style='color: #7b756a; font-size: 1.2rem;'>Upload an image and write your script to begin</p>
     </div>
