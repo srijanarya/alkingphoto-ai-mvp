@@ -81,7 +81,7 @@ with tab1:
             )
             
             if uploaded_file:
-                st.image(uploaded_file, caption="Your uploaded photo", use_column_width=True)
+                st.image(uploaded_file, caption="Your uploaded photo", use_container_width=True)
                 
                 # Save to session state
                 st.session_state.uploaded_image = uploaded_file

@@ -112,7 +112,7 @@ with tab1:
                         file_format = processed_info['format']
                         
                         # Display processed image
-                        st.image(processed_image, caption="✅ Photo processed and ready!", use_column_width=True)
+                        st.image(processed_image, caption="✅ Photo processed and ready!", use_container_width=True)
                         
                         # Show processing info
                         col_info1, col_info2, col_info3 = st.columns(3)

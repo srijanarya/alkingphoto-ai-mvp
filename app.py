@@ -103,7 +103,7 @@ def main():
         )
         
         if uploaded_file:
-            st.image(uploaded_file, caption="Your Photo", use_column_width=True)
+            st.image(uploaded_file, caption="Your Photo", use_container_width=True)
             st.markdown(f"""
             <div style="margin-top: 1rem;">
                 {create_status_badge("Image ready", "success")}

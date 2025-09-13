@@ -61,7 +61,7 @@ with tab1:
                     uploaded_file = None
                 else:
                     try:
-                        st.image(uploaded_file, caption="Uploaded photo", use_column_width=True)
+                        st.image(uploaded_file, caption="Uploaded photo", use_container_width=True)
                     except Exception as e:
                         st.error(f"⚠️ Error displaying image. Please try a different photo.")
         
