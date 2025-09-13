@@ -89,18 +89,18 @@ def apply_professional_theme():
             font-family: 'Syne', sans-serif;
             font-size: 1.5rem;
             font-weight: 800;
-            color: var(--primary-text);
+            color: #ece7e2 !important;
             text-decoration: none;
             transition: color 0.3s ease;
         }
         
         .nav-logo:hover {
-            color: var(--accent-orange);
+            color: #d96833 !important;
         }
         
         .nav-link {
             font-family: 'Space Grotesk', sans-serif;
-            color: var(--primary-text);
+            color: #ece7e2 !important;
             text-decoration: none;
             font-size: 0.95rem;
             font-weight: 500;
@@ -109,7 +109,11 @@ def apply_professional_theme():
         }
         
         .nav-link:hover {
-            color: var(--accent-orange);
+            color: #d96833 !important;
+        }
+        
+        .nav-link-signin {
+            font-weight: 600;
         }
         
         .nav-link::after {
@@ -599,7 +603,7 @@ def create_navigation_bar():
             <div class="nav-right">
                 <a href="#about-section" class="nav-link">About</a>
                 <a href="#contact-section" class="nav-link">Contact</a>
-                <a href="#login-section" class="nav-link" style="color: var(--accent-orange); font-weight: 600;">Sign In</a>
+                <a href="#login-section" class="nav-link nav-link-signin">Sign In</a>
             </div>
         </div>
     </div>
