@@ -51,7 +51,7 @@ def main():
             "Lightning Fast",
             "Generate talking photos in under 60 seconds with our optimized AI pipeline",
             "⚡",
-            link_to="create-section"  # Navigate to main creation section
+            link_to="photo-section"  # Navigate to photo upload section
         )
     
     with col2:
@@ -94,7 +94,7 @@ def main():
     
     with col1:
         st.markdown("""
-        <div class="feature-card">
+        <div id="photo-section" class="feature-card" style="scroll-margin-top: 100px;">
             <h3 style="color: #d96833; margin-bottom: 1rem;">📸 Upload Your Photo</h3>
         </div>
         """, unsafe_allow_html=True)
