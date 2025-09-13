@@ -36,7 +36,7 @@ with tab1:
             st.markdown("### 📸 Upload Photo")
             photo = st.file_uploader("Choose photo", type=['png', 'jpg', 'jpeg'])
             if photo:
-                st.image(photo, use_container_width=True)
+                st.image(photo, use_column_width=True)
         
         with col2:
             st.markdown("### 🎤 Add Script")

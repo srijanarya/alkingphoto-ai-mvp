@@ -347,7 +347,7 @@ class TalkingPhotoApp:
         
         # Display preview
         image = Image.open(uploaded_file)
-        st.image(image, caption=f"Preview: {uploaded_file.name}", use_container_width=True)
+        st.image(image, caption=f"Preview: {uploaded_file.name}", use_column_width=True)
         
         # Upload progress simulation
         progress_bar = st.progress(0)
@@ -429,7 +429,7 @@ class TalkingPhotoApp:
         # Apply basic adjustments (simplified)
         if brightness != 0 or contrast != 0 or crop:
             st.write("📝 Editing preview (simplified)")
-            st.image(image, caption="Edited preview", use_container_width=True)
+            st.image(image, caption="Edited preview", use_column_width=True)
 
     def render_generation_page(self):
         """US-4.2 & US-4.3: Text Input, Voice Configuration & Video Generation"""

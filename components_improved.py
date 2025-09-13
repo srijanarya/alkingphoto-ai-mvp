@@ -312,7 +312,7 @@ class OptimizedPhotoUploadComponent(BaseComponent):
             col1, col2 = st.columns([2, 1])
             
             with col1:
-                st.image(image, caption=f"Preview: {uploaded_file.name}", use_container_width=True)
+                st.image(image, caption=f"Preview: {uploaded_file.name}", use_column_width=True)
             
             with col2:
                 # Enhanced file details

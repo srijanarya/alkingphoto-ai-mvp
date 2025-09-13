@@ -1,0 +1,45 @@
+[theme]
+# Primary color for interactive elements
+primaryColor = "#d96833"
+
+# Background color for the main content area
+backgroundColor = "#1b170f"
+
+# Background color for sidebar and most interactive widgets
+secondaryBackgroundColor = "#2c2416"
+
+# Color used for almost all text
+textColor = "#ece7e2"
+
+# Font family for all text (can be a CSS font stack)
+font = "sans serif"
+
+[server]
+# Max upload size in MB
+maxUploadSize = 50
+
+# Max message size in MB
+maxMessageSize = 50
+
+# Enable CORS protection
+enableCORS = true
+
+# Enable XSRF protection
+enableXsrfProtection = true
+
+# Port
+port = 8501
+
+[browser]
+# Gather usage stats
+gatherUsageStats = false
+
+# Automatically open browser
+serverAddress = "localhost"
+
+[ui]
+# Hide the hamburger menu
+hideTopBar = false
+
+# Hide the footer
+hideSidebarNav = false
