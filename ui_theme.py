@@ -369,6 +369,13 @@ def apply_professional_theme():
             transition: var(--transition);
         }
         
+        .stTextInput > div > div > input:hover,
+        .stTextArea > div > div > textarea:hover {
+            background: rgba(217,104,51,0.05) !important;
+            border-color: var(--accent-orange) !important;
+            box-shadow: 0 0 20px rgba(217,104,51,0.2) !important;
+        }
+        
         .stTextInput > div > div > input:focus,
         .stTextArea > div > div > textarea:focus {
             border-color: var(--accent-orange) !important;
