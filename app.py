@@ -11,7 +11,8 @@ from ui_theme import (
     create_feature_card,
     create_status_badge,
     create_loading_spinner,
-    create_grid_layout
+    create_grid_layout,
+    create_navigation_bar
 )
 
 # Page configuration
@@ -34,6 +35,9 @@ if 'video_generated' not in st.session_state:
     st.session_state.video_generated = False
 
 def main():
+    # Navigation Bar
+    create_navigation_bar()
+    
     # Hero Section
     hero_clicked = create_hero_section(
         title="Transform Photos Into Living Stories",

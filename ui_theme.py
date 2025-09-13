@@ -10,8 +10,10 @@ def apply_professional_theme():
     
     st.markdown("""
     <style>
-        /* Import Google Fonts */
+        /* Import Google Fonts - Similar to sunmetalon.com aesthetic */
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap');
         
         /* Root Variables */
         :root {
@@ -38,16 +40,91 @@ def apply_professional_theme():
         footer {visibility: hidden;}
         header {visibility: hidden;}
         
-        /* Typography */
+        /* Typography - Similar to sunmetalon.com */
+        body, .stApp {
+            font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif !important;
+        }
+        
         h1, h2, h3, h4, h5, h6 {
+            font-family: 'Syne', 'Space Grotesk', sans-serif !important;
             color: var(--text-primary) !important;
             font-weight: 700 !important;
             letter-spacing: -0.02em !important;
         }
         
-        p, span, label {
+        p, span, label, .stSelectbox label, .stTextArea label, .stTextInput label {
+            font-family: 'Space Grotesk', 'Inter', sans-serif !important;
             color: var(--text-secondary) !important;
             line-height: 1.6 !important;
+        }
+        
+        /* Navigation Bar */
+        .nav-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(27, 23, 15, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 999;
+            padding: 1rem 2rem;
+            border-bottom: 1px solid rgba(217, 104, 51, 0.1);
+        }
+        
+        .nav-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-left, .nav-right {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .nav-logo {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--accent-orange);
+            text-decoration: none;
+        }
+        
+        .nav-link {
+            font-family: 'Space Grotesk', sans-serif;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-link:hover {
+            color: var(--accent-orange);
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-orange);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        /* Add padding to main content to account for fixed nav */
+        .main-content {
+            padding-top: 80px;
         }
         
         /* Hero Section */
@@ -490,6 +567,29 @@ def create_grid_layout(columns: int = 3):
     
     return st.columns(columns)
 
+def create_navigation_bar():
+    """Create a professional navigation bar inspired by sunmetalon.com"""
+    st.markdown("""
+    <div class="nav-container">
+        <div class="nav-content">
+            <div class="nav-left">
+                <a href="#" class="nav-link">Home</a>
+                <a href="#pricing-section" class="nav-link">Pricing</a>
+                <a href="#features-section" class="nav-link">Features</a>
+            </div>
+            <div class="nav-center">
+                <a href="#" class="nav-logo">TalkingPhoto AI</a>
+            </div>
+            <div class="nav-right">
+                <a href="#about-section" class="nav-link">About</a>
+                <a href="#contact-section" class="nav-link">Contact</a>
+                <a href="#login-section" class="nav-link" style="color: var(--accent-orange); font-weight: 600;">Sign In</a>
+            </div>
+        </div>
+    </div>
+    <div style="height: 80px;"></div>
+    """, unsafe_allow_html=True)
+
 # Export all theme functions
 __all__ = [
     'apply_professional_theme',
@@ -497,5 +597,6 @@ __all__ = [
     'create_feature_card',
     'create_status_badge',
     'create_loading_spinner',
-    'create_grid_layout'
+    'create_grid_layout',
+    'create_navigation_bar'
 ]
